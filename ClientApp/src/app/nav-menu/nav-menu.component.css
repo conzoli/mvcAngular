@@ -23,6 +23,10 @@ img {
   visibility: hidden;
 }
 
+.AppTitel{
+    visibility: hidden;
+}
+
 @media (min-width: 768px) {
     /* On small screens, convert the nav menu to a vertical sidebar */
     .main-nav {
@@ -71,5 +75,8 @@ img {
       width: 100px;
       height: 100px;
       visibility: visible;
+    }
+    .AppTitel{
+        visibility: visible;
     }
 }

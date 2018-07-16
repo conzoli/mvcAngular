@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NamesComponent implements OnInit {
 
+  hideForm = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClickShowForm(){
+    this.hideForm = false;
   }
 
 }

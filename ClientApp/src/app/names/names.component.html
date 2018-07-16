@@ -1,3 +1,20 @@
-<p>
+<h1>
   names works!
-</p>
+</h1>
+
+<button type="button" class="btn btn-default" (click)="onClickShowForm()">
+    <span class='glyphicon glyphicon-user'></span>Name eingeben</button>
+
+<form [hidden]="hideForm">
+  <div class="form-group">
+    <label for="ForeName">Vorname</label>
+    <input type="text" class="form-control" id="ForeName" aria-describedby="FornameHelp" placeholder="Enter Vorname">
+    <small id="FornameHelp" class="form-text">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter Name">
+    <small id="nameHelp" class="form-text">We'll never share your email with anyone else.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
