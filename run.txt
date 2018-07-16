@@ -1,0 +1,5 @@
+echo ASPNETCORE_ENVIRONMENT=development
+
+
+dotnet run --server.urls=http://localhost:5000/
+
