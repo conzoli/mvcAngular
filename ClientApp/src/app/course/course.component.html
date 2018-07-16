@@ -1,23 +1,26 @@
+
+
 <div class="jumbotron">
     <h1>Course Component</h1>
-    
+
       <div class="MyAlign">course works! 123</div>
-    
+
 </div>
 
 <div class="btn-group btn-group-lg" role="group">
 
-    <button type="button" class="btn btn-default">Small</button>
-    <button type="button" class="btn btn-default">Medium</button>
-    <button type="button" class="btn btn-default">Large</button>
+    <button type="button" class="btn btn-default" (click)="onClickChangeColor('green')" >Grün</button>
+    <button type="button" class="btn btn-default" (click)="onClickChangeColor('yellow')">Gelb</button>
+    <button type="button" class="btn btn-default" (click)="onClickChangeColor('red')" >Rot</button>
 
 </div>
-
-<div class="MyRed">Hallo, ist das jetzt Rot?</div>
+<br>
+<div [style.color]="color" class="MyText">Hallo, ist das jetzt {{color}}?</div>
 <br>
 
-<li *ngFor="let course of Course">
-    {{course}}
-</li>
-
+<ol>
+  <li *ngFor="let course of Course">
+      {{course}}
+  </li>
+</ol>
 

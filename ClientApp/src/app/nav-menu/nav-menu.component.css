@@ -19,6 +19,10 @@ li.link-active a:focus {
     z-index: 1;
 }
 
+img {
+  visibility: hidden;
+}
+
 @media (min-width: 768px) {
     /* On small screens, convert the nav menu to a vertical sidebar */
     .main-nav {
@@ -32,6 +36,11 @@ li.link-active a:focus {
     }
     .navbar-header {
         float: none;
+
+    }
+    .navbar-brand{
+      height: 150px;
+      text-align: center;
     }
     .navbar-collapse {
         border-top: 1px solid #444;
@@ -55,5 +64,12 @@ li.link-active a:focus {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100px;
+      height: 100px;
+      visibility: visible;
     }
 }

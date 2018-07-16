@@ -1,12 +1,12 @@
-import { Component, Inject } from '@angular/core';
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 // import {map} from 'rxjs/operators';
 
 @Injectable()
 export class CourseService {
 
-  url:string;
+  url: string;
 
   constructor(private http: HttpClient) {
     this.url = "http://localhost:5000/";
@@ -15,5 +15,7 @@ export class CourseService {
   getCourses(){
     return this.http.get<string[]>(this.url + 'api/a/GetCourses');
   }
+
+
 
 }

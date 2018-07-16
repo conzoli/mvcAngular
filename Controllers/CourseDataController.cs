@@ -14,9 +14,19 @@ namespace mvcAngular.Controllers
         [HttpGet("[action]")]
         public string[] GetCourses(){
 
-            string[] retValues = {"Course1 from WebApi", "Course2"};
+            string[] Course = {"Course1 from WebApi", "Course2"};
 
-            return retValues;
+            List<string> ListCourse = new List<string>();
+
+            foreach(var c in Course){
+                ListCourse.Add(c);
+            }
+
+            for(int i = 1; i <= 100; i++){
+                ListCourse.Add($"Course{i}");
+            }
+
+            return ListCourse.ToArray();
 
         }
 

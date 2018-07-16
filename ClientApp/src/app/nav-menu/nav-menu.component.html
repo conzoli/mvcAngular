@@ -7,7 +7,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>mvcAngular</a>
+            <a class='navbar-brand' [routerLink]='["/"]'><img src="angular.svg" alt="Angular Img" width="100" height="100" />mvcAngular</a>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
@@ -29,9 +29,14 @@
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/course"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-th-list'></span>Course
+                        <span class='glyphicon glyphicon-calendar'></span>Course
                     </a>
                 </li>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/names"]' (click)='collapse()'>
+                      <span class='glyphicon glyphicon-user'></span>Namen
+                  </a>
+              </li>
             </ul>
         </div>
     </div>

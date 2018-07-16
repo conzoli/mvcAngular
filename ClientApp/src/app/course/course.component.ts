@@ -5,11 +5,13 @@ import { CourseService } from './course.service';
   selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
-  
+
 })
 export class CourseComponent implements OnInit {
 
-  Course: string[]; 
+  Course: string[];
+
+  color = 'black';
 
   constructor(private courseService : CourseService ) {
       courseService.getCourses().subscribe(result => {
@@ -19,5 +21,15 @@ export class CourseComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  onClickChangeColor(newColor: string) {
+    this.color = newColor;
+  }
+
+  onClickGreen(){
+    this.color = 'green';
+  }
+
+
 
 }
