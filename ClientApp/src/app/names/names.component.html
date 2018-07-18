@@ -1,19 +1,27 @@
-<h1>
-  names works!
-</h1>
+<div class="jumbotron">
+  <h1>Name Component</h1>
+
+    <div class="MyAlign">Name works! 123</div>
+
+</div>
+
+<li *ngFor="let name of names">
+  {{name.Vorname}} {{name.Name}}
+</li>
+
 
 <button type="button" class="btn btn-default" (click)="onClickShowForm()">
     <span class='glyphicon glyphicon-user'></span>Name eingeben</button>
 
-<form [hidden]="hideForm">
+<form [hidden]="hideForm" #nameSubmitForm="ngForm" (ngSubmit)="OnSubmit(nameSubmitForm)">
   <div class="form-group">
     <label for="ForeName">Vorname</label>
-    <input type="text" class="form-control" id="ForeName" aria-describedby="FornameHelp" placeholder="Enter Vorname">
+    <input ngModel name="ForeName" type="text" class="form-control" id="ForeName" aria-describedby="FornameHelp" placeholder="Enter Vorname">
     <small id="FornameHelp" class="form-text">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="Name">Name</label>
-    <input type="text" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter Name">
+    <input ngModel name="name" type="text" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter Name">
     <small id="nameHelp" class="form-text">We'll never share your email with anyone else.</small>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

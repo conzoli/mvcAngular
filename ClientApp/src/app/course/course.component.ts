@@ -26,7 +26,7 @@ export class CourseComponent implements OnInit {
     this.color = newColor;
   }
 
-  onClickGreen(){
+  onClickGreen() {
     this.color = 'green';
   }
 

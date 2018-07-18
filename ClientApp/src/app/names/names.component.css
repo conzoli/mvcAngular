@@ -1,0 +1,11 @@
+
+
+li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}

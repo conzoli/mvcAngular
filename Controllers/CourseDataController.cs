@@ -14,6 +14,9 @@ namespace mvcAngular.Controllers
         [HttpGet("[action]")]
         public string[] GetCourses(){
 
+
+            Console.WriteLine("Hiiiiiieeeeeerrrr");
+
             string[] Course = {"Course1 from WebApi", "Course2"};
 
             List<string> ListCourse = new List<string>();
