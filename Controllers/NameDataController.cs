@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using mvcAngular.ClientApp.Models;
+using Newtonsoft.Json;
 
 namespace mvcAngular.Controllers
 {
@@ -13,11 +14,12 @@ namespace mvcAngular.Controllers
     {
         [Route("api/b/name")]
         [HttpPost]
-        public IdentityResult inserName([FromBody] MyName _name){
+        
+        public ActionResult<string> inserName([FromBody] MyName _name){
 
             Console.WriteLine(" ----------> " + _name.Vorname + " " + _name.Name  );
             
-            return IdentityResult.Success;
+            return  JsonConvert.SerializeObject("Done insert Name: " + _name.Name);
 
         }
 

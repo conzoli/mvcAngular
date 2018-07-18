@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Name } from '../shared/name.model';
 import { NamesService } from './names.service';
 import { NgForm } from '@angular/forms';
+import {Observable} from 'rxjs/Rx';
+import { nearer } from 'q';
 
 @Component({
   selector: 'app-names',
@@ -13,6 +15,8 @@ export class NamesComponent implements OnInit {
   hideForm = true;
 
   names: Name[];
+
+  msg = 'Bereit';
 
   constructor(private nameService: NamesService) {
 
@@ -40,14 +44,11 @@ export class NamesComponent implements OnInit {
     form.value.ForeName = '';
     form.value.name = '';
 
-
-
     this.nameService.insertName(newName)
-    .subscribe( (data: any) => {
-      if( data.Succeded == true ) {
-        ;
-      }
-    });
+        .subscribe( result => { this.msg = result; },
+                    err => console.error(err) );
+
+    this.hideForm = true;
 
   }
 

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Name } from '../shared/name.model';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
+
 
 @Injectable()
 export class NamesService {
@@ -40,21 +42,15 @@ export class NamesService {
   }
 
 
-  insertName(name: Name) {
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
-      })
-    };
+  insertName(name: Name) : Observable<string> {
 
     const body: Name = {
       Name: name.Name,
       Vorname: name.Vorname
     };
 
-    return this.http.post(this.rootUrl + 'api/b/name', body, httpOptions);
+    return this.http.post<string>(this.rootUrl + 'api/b/name', body);
+    
   }
 
 }
