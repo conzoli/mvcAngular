@@ -8,11 +8,12 @@
 <div class="text">
 
   <li *ngFor="let name of names">
-    {{name.Vorname}} {{name.Name}}
+    <a [routerLink]="['/name-details', name.Id]" >{{name.Vorname}} {{name.Name}}</a>
   </li>
 
   <button type="button" class="btn btn-default" (click)="onClickShowForm()">
-      <span class='glyphicon glyphicon-user'></span>Name eingeben</button>
+      <span class='glyphicon glyphicon-user'></span>Name eingeben
+  </button>
 
   <form [hidden]="hideForm" #nameSubmitForm="ngForm" (ngSubmit)="OnSubmit(nameSubmitForm)">
     <div class="form-group">

@@ -1,21 +1,28 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace mvcAngular.Controllers
 {
 
     [Route("api/a")]
+    [Authorize]
     public class CourseDataController : Controller
     {
-        
+
         [HttpGet("[action]")]
         public string[] GetCourses(){
 
 
-            Console.WriteLine("Hiiiiiieeeeeerrrr");
+            string userId = User.Identity.Name;
+
+
+            Console.WriteLine("User : " + userId + " hat die Course angeforder.");
 
             string[] Course = {"Course1 from WebApi", "Course2"};
 

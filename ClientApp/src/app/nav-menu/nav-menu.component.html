@@ -38,6 +38,11 @@
                       <span class='glyphicon glyphicon-user'></span>Namen
                   </a>
               </li>
+              <li *ngIf="!isLogedin" [routerLinkActive]='["link-active"]'>
+                <a [routerLink]='["/login"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-user'></span>Login
+                </a>
+            </li>
             </ul>
         </div>
     </div>

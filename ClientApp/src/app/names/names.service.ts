@@ -11,6 +11,8 @@ export class NamesService {
 
   names: Name[];
 
+  lastId = 0;
+
   readonly rootUrl = 'http://localhost:5000/';
 
   constructor(private http: HttpClient) {
@@ -24,6 +26,9 @@ export class NamesService {
 
     humer.Name = 'Simpson';
     humer.Vorname = 'Humer';
+    humer.Id = this.lastId + 1;
+
+    this.lastId = this.lastId + 1;
 
     this.names.push(humer);
 
@@ -31,6 +36,9 @@ export class NamesService {
 
     Marge.Name = 'Simpson';
     Marge.Vorname = 'Marge';
+    Marge.Id = this.lastId + 1;
+
+    this.lastId = this.lastId + 1;
 
     this.names.push(Marge);
 
@@ -46,11 +54,12 @@ export class NamesService {
 
     const body: Name = {
       Name: name.Name,
-      Vorname: name.Vorname
+      Vorname: name.Vorname,
+      Id:  name.Id
     };
 
     return this.http.post<string>(this.rootUrl + 'api/b/name', body);
-    
+
   }
 
 }

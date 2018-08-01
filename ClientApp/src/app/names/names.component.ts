@@ -38,6 +38,9 @@ export class NamesComponent implements OnInit {
 
     newName.Vorname = form.value.ForeName;
     newName.Name =  form.value.name;
+    newName.Id = this.nameService.lastId + 1;
+
+    this.nameService.lastId = this.nameService.lastId + 1;
 
     this.names.push(newName);
 

@@ -1,3 +1,4 @@
+import { LoginService } from './login/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +17,8 @@ import { NamesComponent } from './names/names.component';
 import { NameDetailComponent } from './name-detail/name-detail.component';
 import { NamesService } from './names/names.service';
 import { NameDetailService } from './name-detail/name-detail.service';
+import { LoginComponent } from './login/login.component';
+import { AppState } from './shared/AppState';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { NameDetailService } from './name-detail/name-detail.service';
     FetchDataComponent,
     CourseComponent,
     NamesComponent,
-    NameDetailComponent
+    NameDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,9 +42,11 @@ import { NameDetailService } from './name-detail/name-detail.service';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'course', component: CourseComponent},
       { path: 'names', component: NamesComponent},
+      { path: 'login', component: LoginComponent},
+      { path: 'name-details/:id', component: NameDetailComponent }
     ])
   ],
-  providers: [CourseService, NamesService, NameDetailService],
+  providers: [CourseService, NamesService, NameDetailService, LoginService, AppState],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1>Login Component</h1>
+
+    <div class="MyAlign">Login: Username: admin Password: zeus</div>
+
+
+    <form  #LoginSubmitForm="ngForm" (ngSubmit)="OnSubmit(LoginSubmitForm)">
+      <div class="form-group">
+        <label for="UserName">UserName</label>
+        <input ngModel name="UserName" type="text" class="form-control" id="UserName" aria-describedby="FornameHelp" placeholder="Enter Username">
+        <small id="FornameHelp" class="form-text">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="Password">Name</label>
+        <input ngModel name="Password" type="password" class="form-control" id="Password" aria-describedby="nameHelp" placeholder="Enter Password">
+        <small id="nameHelp" class="form-text">We'll never share your email with anyone else.</small>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</div>
+
+<code>{{msg}}</code>
