@@ -27,7 +27,7 @@ namespace mvcAngular.Controllers
                 return BadRequest("Invalid client request!");
             }
 
-            //Achtung hier ist user hard im code:
+            // Achtung hier ist user hard im code:
             // noch in deb auslagern 
 
             if(user.UserName == "admin" && user.Password == "zeus"){

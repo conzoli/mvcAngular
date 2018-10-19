@@ -33,7 +33,6 @@ namespace mvcAngular
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-
                         ValidIssuer = "https://localhost:5001",
                         ValidAudience = "https://localhost:5001",
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@123"))
@@ -73,7 +72,9 @@ namespace mvcAngular
             app.UseAuthentication();
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+            
             app.UseSpaStaticFiles();
 
             app.UseCors(options => options.WithOrigins("https://localhost:5001"));
